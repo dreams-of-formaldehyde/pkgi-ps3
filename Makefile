@@ -44,9 +44,10 @@ LIBS		:=	-lcurl -lxml2 -lya2d -lfont3d -ltiny3d -lsimdmath -lgcm_sys -lio -lsysu
 
 #---------------------------------------------------------------------------------
 # options for code generation
+# I don't know if GCC activates altivec on the CELL, so im just going to enable it just in case along with -mtune=cell. also gonna enable lto but its probably not gonna work lol
 #---------------------------------------------------------------------------------
 
-CFLAGS		=	-O2 -Wall -mcpu=cell -std=gnu99 $(MACHDEP) $(INCLUDE)
+CFLAGS		=	-O2 -mtune=cell -maltivec -Wall -flto -mcpu=cell -std=gnu99 $(MACHDEP) $(INCLUDE)
 CXXFLAGS	=	$(CFLAGS)
 
 LDFLAGS		=	$(MACHDEP) -Wl,-Map,$(notdir $@).map
