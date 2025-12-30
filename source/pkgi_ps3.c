@@ -44,8 +44,8 @@
 
 #define PKGI_USER_AGENT "Mozilla/5.0 (PLAYSTATION 3; 1.00)"
 
-#define PKGI_CURL_BUFFER_SIZE   (384 * 1024L)
-#define PKGI_FILE_BUFFER_SIZE   (384 * 1024)
+#define PKGI_CURL_BUFFER_SIZE   (512 * 1024L)
+#define PKGI_FILE_BUFFER_SIZE   (256 * 1024)
 
 
 struct pkgi_http
